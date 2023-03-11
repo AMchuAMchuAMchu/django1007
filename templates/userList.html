@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>😁😁😁😁</title>
+</head>
+<body>
+<h1>后台用户数据展示😁😁</h1>
+<div class="box_add">
+    <form action="/userList_add/" method="post">
+        用户名:<input type="text" name="username_add"><br>
+        密&emsp;码:<input type="password" name="password_add"><br>
+        <button type="submit">添加</button>
+    </form>
+</div>
+<hr>
+<div class="box_delete">
+    <form action="/userList_delete/" method="post">
+        用户名:<input type="text" name="username_delete"><br>
+        密&emsp;码:<input type="password" name="password_delete"><br>
+        <button type="submit">删除</button>
+    </form>
+</div>
+<table border="2px">
+    <tr>
+        <th>用户名</th>
+        <th>密&emsp;码</th>
+    </tr>
+    {% for item in data %}
+        <tr>
+            <td>{{ item.username }}</td>
+            <td>{{ item.password }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
